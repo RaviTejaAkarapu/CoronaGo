@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CoronaGo</string>
+
+    <string name="confirmed">Confirmed</string>
+    <string name="active">Active</string>
+    <string name="recovered">Recovered</string>
+    <string name="died">Deceased</string>
+    <string name="state">State</string>
+    <string name="total">Total</string>
 </resources>
