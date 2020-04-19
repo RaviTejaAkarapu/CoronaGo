@@ -9,7 +9,7 @@ import com.example.coronago.R
 
 class SplashScreen : AppCompatActivity() {
 
-    private val SPLASH_TIME_OUT = 3000
+    private val SPLASH_TIME_OUT = 30
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
