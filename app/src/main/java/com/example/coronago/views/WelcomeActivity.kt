@@ -1,5 +1,6 @@
 package com.example.coronago.views
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -30,8 +31,11 @@ class WelcomeActivity : AppCompatActivity() {
                 pager.currentItem = pager.currentItem - 1
         }
         else if (action == PrevNext.NEXT)
-            if (pager.currentItem != totalPages)
-                pager.currentItem = pager.currentItem + 1
+            if (pager.currentItem != totalPages -1) pager.currentItem = pager.currentItem + 1
+            else {
+                startActivity(Intent(this, MainActivity::class.java))
+            }
+
     }
     private inner class MyPagerAdapter(fm: FragmentManager?) :
         FragmentPagerAdapter(fm!!) {
