@@ -37,8 +37,8 @@ class WelcomeActivity : AppCompatActivity() {
             else {
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra(CALLED_FROM, FROM_WELCOMESCREEN)
-                startActivity(Intent(this, MainActivity::class.java))
-//                finish()
+                startActivity(Intent(intent))
+                finish()
             }
 
     }

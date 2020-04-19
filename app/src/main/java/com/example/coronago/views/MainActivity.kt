@@ -56,10 +56,12 @@ class MainActivity : AppCompatActivity() , CoronaCasesAdapter.OnItemClickListene
 
     override fun onItemClicked(coronaCase: DummyModel) {
         calledFrom?.let {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra(CALLED_FROM, FROM_MAINACTIVITY)
-            intent.putExtra(ELEMENT_ID, coronaCase.year)
-            startActivity(intent)
+            if (it == FROM_WELCOMESCREEN) {
+                val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra(CALLED_FROM, FROM_MAINACTIVITY)
+                intent.putExtra(ELEMENT_ID, coronaCase.year)
+                startActivity(intent)
+            }
         }
 
     }
