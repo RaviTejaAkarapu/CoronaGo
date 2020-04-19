@@ -7,7 +7,10 @@
     android:orientation="horizontal"
     android:padding="@dimen/dimen_5dp"
     android:elevation="@dimen/dimen_5dp"
-    android:weightSum="10">
+    android:layout_marginTop="@dimen/dimen_5dp"
+    android:layout_marginBottom="@dimen/dimen_5dp"
+    android:weightSum="10"
+    android:background="#FFDADADA">
 
     <TextView
         android:id="@+id/placeName"
