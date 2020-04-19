@@ -14,7 +14,7 @@ import com.example.coronago.model.Patient
 import com.example.coronago.model.State
 
 @Database(
-    entities = arrayOf(Patient::class, Country::class, District::class, State::class),
+    entities = [Patient::class, Country::class, District::class, State::class],
     version = 1
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -23,20 +23,20 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun getStateDao(): StateDao
     abstract fun getPatientDao(): PatientDao
 
-    open fun getAppDatabase(context: Context): AppDatabase? {
-        if (AppDatabase.appDatabase == null) {
-            AppDatabase.appDatabase = Room.databaseBuilder(
-                context.applicationContext,
-                AppDatabase::class.java, "corona-tracker-db"
-            )
-                .addMigrations().allowMainThreadQueries()
-                .build()
-        }
-        return AppDatabase.appDatabase
-    }
-
     companion object {
-        private var appDatabase: AppDatabase? = null
+        lateinit var appDatabase: AppDatabase
+
+        fun getAppDatabase(context: Context): AppDatabase {
+            if (appDatabase == null) {
+                appDatabase = Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java, "corona-tracker-db"
+                )
+                    .addMigrations().allowMainThreadQueries()
+                    .build()
+            }
+            return appDatabase
+        }
     }
 
 }

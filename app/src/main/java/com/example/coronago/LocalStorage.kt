@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
 
-class LocalStorage {
+class LocalStorage(context: Context) {
     private lateinit var sharedPref: SharedPreferences
 
     fun LocalStorage(context: Context) {
