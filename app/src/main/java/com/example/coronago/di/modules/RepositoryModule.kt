@@ -9,7 +9,6 @@ import dagger.Module
 
 @Module
 abstract class RepositoryModule {
-
     @Binds
     abstract fun bindPatientRepo(patientRepo: PatientRepo): PatientRepo
 

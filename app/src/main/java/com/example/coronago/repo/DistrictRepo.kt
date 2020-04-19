@@ -29,7 +29,8 @@ class DistrictRepo @Inject constructor(
 
     fun getAllDistrictsList() = districtCache.getAllDistrictsList()
 
-    fun getAllDistrictsLiveData(): LiveData<List<District>> = districtCache.getAllDistrictsLiveData()
+    fun getAllDistrictsLiveData(): LiveData<List<District>> =
+        districtCache.getAllDistrictsLiveData()
 
     fun getTotalNoOfDistricts() = districtCache.getTotalNoOfDistricts()
 

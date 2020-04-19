@@ -1,13 +1,15 @@
 package com.example.coronago.dao
 
 import androidx.lifecycle.LiveData
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import com.example.coronago.model.State
 
+@Dao
 interface StateDao {
-    
+
     @Insert
     fun insert(state: State)
 
@@ -19,7 +21,7 @@ interface StateDao {
 
     @Query("SELECT COUNT(*) FROM State")
     fun getTotalNoOfStatesLD(): LiveData<Int>
-    
+
     @Insert
     fun insertAll(states: List<State>)
 

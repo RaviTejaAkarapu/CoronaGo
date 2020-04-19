@@ -5,11 +5,12 @@ import android.content.SharedPreferences
 import com.example.coronago.AppDatabase
 import com.example.coronago.ApplicationContext
 import com.example.coronago.LocalStorage
+import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-
-abstract class SharedPrefModule {
+@Module
+class SharedPrefModule {
 
     @Singleton
     @Provides

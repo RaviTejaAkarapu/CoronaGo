@@ -3,7 +3,7 @@ package com.example.coronago
 import android.app.Application
 import com.example.coronago.di.component.DaggerAppComponent
 
-class ApplicationContext: Application() {
+class ApplicationContext : Application() {
 
     override fun onCreate() {
         super.onCreate()
