@@ -5,6 +5,6 @@ import javax.inject.Inject
 
 class StateRemote @Inject constructor(private val webService: WebService) {
 
-    fun fetchDeceasedAndRecovered() = webService.fetchDeceasedAndRecovered()
+    fun fetchStateWiseData() = webService.fetchStateWiseData()
 
 }

@@ -13,8 +13,8 @@ class StateCache(appDatabase: AppDatabase) {
         stateDao.insert(state)
     }
 
-    fun insertCountries(Countries: List<State>) {
-        stateDao.insertAll(Countries)
+    fun insertStates(States: List<State>) {
+        stateDao.insertAll(States)
     }
 
     fun update(state: State) {
@@ -25,10 +25,10 @@ class StateCache(appDatabase: AppDatabase) {
         stateDao.delete(state)
     }
 
-    fun getAllCountriesList() = stateDao.getAllStates()
+    fun getAllStatesList() = stateDao.getAllStates()
 
-    fun getAllCountriesLiveData(): LiveData<List<State>> = stateDao.getAllStatesLD()
+    fun getAllStatesLiveData(): LiveData<List<State>> = stateDao.getAllStatesLD()
 
-    fun getTotalNoOfCountries() = stateDao.getTotalNoOfStatesLD()
+    fun getTotalNoOfStates() = stateDao.getTotalNoOfStatesLD()
 
 }

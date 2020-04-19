@@ -13,8 +13,8 @@ class DistrictCache(appDatabase: AppDatabase) {
         districtDao.insert(district)
     }
 
-    fun insertCountries(Countries: List<District>) {
-        districtDao.insertAll(Countries)
+    fun insertDistricts(Districts: List<District>) {
+        districtDao.insertAll(Districts)
     }
 
     fun update(district: District) {
@@ -25,10 +25,10 @@ class DistrictCache(appDatabase: AppDatabase) {
         districtDao.delete(district)
     }
 
-    fun getAllCountriesList() = districtDao.getAllDistricts()
+    fun getAllDistrictsList() = districtDao.getAllDistricts()
 
-    fun getAllCountriesLiveData(): LiveData<List<District>> = districtDao.getAllDistrictsLD()
+    fun getAllDistrictsLiveData(): LiveData<List<District>> = districtDao.getAllDistrictsLD()
 
-    fun getTotalNoOfCountries() = districtDao.getTotalNoOfDistrictsLD()
+    fun getTotalNoOfDistricts() = districtDao.getTotalNoOfDistrictsLD()
 
 }

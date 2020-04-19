@@ -18,4 +18,7 @@ interface ApiService {
     @GET("api endpoint goes here")
     fun getDistrictWiseData(): Observable<JsonElement>
 
+    @GET("api endpoint goes here")
+    fun getStateWiseData(): Observable<JsonElement>
+
 }

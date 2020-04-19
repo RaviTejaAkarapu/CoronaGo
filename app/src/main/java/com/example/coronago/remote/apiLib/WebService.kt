@@ -9,6 +9,8 @@ class WebService @Inject constructor(val apiService: ApiService, val localStorag
 
     fun fetchDistrictWiseData() = apiService.getDistrictWiseData()
 
+    fun fetchStateWiseData() = apiService.getStateWiseData()
+
     fun fetchDeceasedAndRecovered() = apiService.getDeceasedAndRecovered()
 
     fun fetchTotalPatientsCount() = apiService.getTotalCount()
