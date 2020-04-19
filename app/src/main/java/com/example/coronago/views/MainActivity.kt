@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setData() {
 
+        //TODO need to populate total counts & other dynamic fields
+
         dummyModelList = viewModel.loadData(0)
         mAdapter = CoronaCasesAdapter(dummyModelList)
         val mLayoutManager: RecyclerView.LayoutManager =
