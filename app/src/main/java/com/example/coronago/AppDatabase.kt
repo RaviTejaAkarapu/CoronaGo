@@ -18,10 +18,10 @@ import com.example.coronago.model.State
     version = 1
 )
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun getCountryDao(): CountryDao?
-    abstract fun getDistrictDao(): DistrictDao?
-    abstract fun getStateDao(): StateDao?
-    abstract fun getPatientDao(): PatientDao?
+    abstract fun getCountryDao(): CountryDao
+    abstract fun getDistrictDao(): DistrictDao
+    abstract fun getStateDao(): StateDao
+    abstract fun getPatientDao(): PatientDao
 
     open fun getAppDatabase(context: Context): AppDatabase? {
         if (AppDatabase.appDatabase == null) {

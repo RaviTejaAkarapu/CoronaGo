@@ -3,6 +3,7 @@ package com.example.coronago.dao
 import androidx.lifecycle.LiveData
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import com.example.coronago.model.Country
 
 interface CountryDao {
@@ -11,11 +12,21 @@ interface CountryDao {
     fun insert(country: Country)
 
     @Query("SELECT * FROM country")
-    fun getAllCountrys(): List<Country?>?
+    fun getAllCountries(): List<Country>
 
     @Query("SELECT * FROM country")
-    fun getAllCountrysLD(): LiveData<List<Country?>?>?
+    fun getAllCountriesLD(): LiveData<List<Country>>
 
     @Query("SELECT COUNT(*) FROM country")
-    fun getTotalNoOfCountriesLD(): LiveData<Int?>?
+    fun getTotalNoOfCountriesLD(): LiveData<Int>
+
+    @Insert
+    fun insertAll(Countries: List<Country>)
+
+    @Insert
+    fun delete(country: Country)
+
+    @Update
+    fun update(country: Country)
+
 }
