@@ -11,8 +11,14 @@ import java.text.FieldPosition
 
 class MainActivityViewModel(application: Application) : AndroidViewModel(application) {
 
-    fun loadData(position: Int) : List<DummyModel> {
-        return DummyDataProvider.prepareDummyModelData()
+     var caseData: MutableLiveData<List<DummyModel>> = MutableLiveData()
+
+    fun loadData(elsementId: String?)  {
+        if (elsementId == null)
+            caseData.postValue(DummyDataProvider.prepareDummyModelData())   // need to load countrywise data here
+        else
+            caseData.postValue(DummyDataProvider.prepareDummyModelData())  // need to load statewise data here
+//        return DummyDataProvider.prepareDummyModelData()
     }
 
 }

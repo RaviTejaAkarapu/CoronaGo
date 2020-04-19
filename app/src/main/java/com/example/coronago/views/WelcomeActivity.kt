@@ -9,6 +9,8 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.coronago.R
 import com.example.coronago.views.FragmentViewPager.Companion.newInstance
+import com.example.coronago.views.MainActivity.Companion.CALLED_FROM
+import com.example.coronago.views.MainActivity.Companion.FROM_WELCOMESCREEN
 import kotlinx.android.synthetic.main.activity_welcome.*
 
 class WelcomeActivity : AppCompatActivity() {
@@ -33,7 +35,10 @@ class WelcomeActivity : AppCompatActivity() {
         else if (action == PrevNext.NEXT)
             if (pager.currentItem != totalPages -1) pager.currentItem = pager.currentItem + 1
             else {
+                val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra(CALLED_FROM, FROM_WELCOMESCREEN)
                 startActivity(Intent(this, MainActivity::class.java))
+//                finish()
             }
 
     }
