@@ -9,6 +9,7 @@
     android:elevation="@dimen/dimen_5dp"
     android:weightSum="10">
 
+
     <TextView
         android:id="@+id/placeName"
         android:layout_width="@dimen/dimen_0dp"
