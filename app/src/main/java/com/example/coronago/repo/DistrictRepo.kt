@@ -35,6 +35,7 @@ class DistrictRepo @Inject constructor(
     fun getTotalNoOfDistricts() = districtCache.getTotalNoOfDistricts()
 
     //Remote data access methods
-    fun fetchDistrictWiseData() = districtRemote.fetchDistrictWiseData()
-
+    fun fetchDistrictWiseData() {
+        districtCache.insertDistricts(districtRemote.fetchDistrictWiseData())
+    }
 }

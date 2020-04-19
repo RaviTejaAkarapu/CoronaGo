@@ -1,16 +1,14 @@
 package com.example.coronago.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
+import androidx.room.OnConflictStrategy.REPLACE
 import com.example.coronago.model.District
 
 @Dao
 interface DistrictDao {
 
-    @Insert
+    @Insert(onConflict = REPLACE)
     fun insert(district: District)
 
     @Query("SELECT * FROM district")
@@ -22,10 +20,10 @@ interface DistrictDao {
     @Query("SELECT COUNT(*) FROM district")
     fun getTotalNoOfDistrictsLD(): LiveData<Int>
 
-    @Insert
+    @Insert(onConflict = REPLACE)
     fun insertAll(districts: List<District>)
 
-    @Insert
+    @Delete
     fun delete(district: District)
 
     @Update

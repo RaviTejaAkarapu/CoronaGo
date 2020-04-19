@@ -12,6 +12,7 @@ import com.example.coronago.model.Country
 import com.example.coronago.model.District
 import com.example.coronago.model.Patient
 import com.example.coronago.model.State
+import com.example.coronago.repo.DistrictRepo
 
 @Database(
     entities = [Patient::class, Country::class, District::class, State::class],

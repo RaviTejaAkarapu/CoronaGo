@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET("api endpoint goes here")
+    @GET("https://api.covid19india.org/v2/state_district_wise.json")
     fun getPatients(): Observable<JsonElement>
 
     @GET("api endpoint goes here")
@@ -15,7 +15,7 @@ interface ApiService {
     @GET("api endpoint goes here")
     fun getDeceasedAndRecovered(): Observable<JsonElement>
 
-    @GET("api endpoint goes here")
+    @GET("https://api.covid19india.org/v2/state_district_wise.json")
     fun getDistrictWiseData(): Observable<JsonElement>
 
     @GET("api endpoint goes here")
