@@ -12,6 +12,7 @@
     android:weightSum="10"
     android:background="#FFDADADA">
 
+
     <TextView
         android:id="@+id/placeName"
         android:layout_width="@dimen/dimen_0dp"
