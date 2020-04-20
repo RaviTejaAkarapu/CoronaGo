@@ -4,28 +4,35 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.coronago.ApplicationContext
 import com.example.coronago.R
 import com.example.coronago.adapters.CoronaCasesAdapter
+import com.example.coronago.di.ViewModelFactory
+import com.example.coronago.di.component.AppComponent
 import com.example.coronago.dummydata.DummyModel
 import com.example.coronago.viewmodels.MainActivityViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
 
 class MainActivity : AppCompatActivity() , CoronaCasesAdapter.OnItemClickListener {
 
-    private lateinit var viewModel: MainActivityViewModel
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+
+    private val viewModel: MainActivityViewModel by lazy {
+        ViewModelProvider(this, viewModelFactory).get(MainActivityViewModel::class.java)
+    }
     private lateinit var mAdapter: CoronaCasesAdapter
     private  var calledFrom: String? = null
     private  var clickedElement: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProviders.of(this)
-                .get<MainActivityViewModel>(MainActivityViewModel::class.java)
         setContentView(R.layout.activity_main)
         getIntentBundle()
         setData()
